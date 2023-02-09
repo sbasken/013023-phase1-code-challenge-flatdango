@@ -26,6 +26,7 @@ fetch(movieAPI)
 .then(movies => {
     sideMenu.innerHTML = ""
     movies.forEach(renderMovie)
+    movieList = movies
 })
 
 const renderMovie = (movie) => {
@@ -66,7 +67,7 @@ const renderCards = (movie) => {
     description.className = "description"
 
     const extraContent = document.createElement('div')
-    extraContent.class = "extra content"
+    extraContent.className = "extra content"
 
     movieContent.append(description)
 
@@ -78,15 +79,15 @@ const renderCards = (movie) => {
 
     const showTimeCard = document.createElement('span')
     showTimeCard.id = "showtime";
-    showTimeCard.class = "ui label";
+    showTimeCard.className = "ui label";
     showTimeCard.innerText = movie.showtime
 
     const remainingTicket = document.createElement('span')
     remainingTicket.id = "ticket-num";
-    remainingTicket.innerText = `${movie.capacity - movie["tickets_sold"]} `
+    remainingTicket.innerText = `${movie.capacity - movie["tickets_sold"]}  remaining tickets`
 
     description.append(filmInfo, showTimeCard, remainingTicket)
-    description.innerText += " remaining tickets"
+
 
     const button = document.createElement('button')
     button.id = "buy-ticket";
@@ -95,14 +96,15 @@ const renderCards = (movie) => {
     extraContent.append(button)
 
     button.addEventListener('click', ()=> {
-        movie.capacity - movie["tickets_sold"] += 1
+        movie["tickets_sold"] += 1
         // console.log(movie.capacity - movie["tickets_sold"])
         // it's showing 1 less number but I cann't render it on the browser...!!
         
-        remainingTicket.textContent = `${movie.capacity - movie["tickets_sold"]} `        
+        remainingTicket.innerText = `${movie.capacity - movie["tickets_sold"]} tickets remaining`        
     })
 
 }
+
 
 
 
