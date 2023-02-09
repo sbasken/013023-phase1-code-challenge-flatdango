@@ -7,7 +7,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"
     />
     <link rel="stylesheet" href="assets/index.css" />
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script defer src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   </head>
   <body>
     <!-- navbar -->
@@ -32,7 +32,7 @@
       </div>
 
       <!-- poster -->
-      <div class="four wide column">
+      <div id="poster" class="four wide column">
         <img
           id="poster"
           src="assets/placeholderImage.png"
@@ -43,7 +43,7 @@
       <!-- showing info -->
       <div class="four wide column">
         <div class="ui cards" id="showing">
-          <div class="card">
+          <div class="card" id="showCard">
             <div id="title" class="title">[MOVIE TITLE]</div>
             <div id="runtime" class="meta">[RUNTIME] minutes</div>
             <div class="content">
