@@ -94,7 +94,7 @@ const renderCards = (movie) => {
     button.innerText = "Buy Ticket"
     extraContent.append(button)
 
-    .addEventListener('click', ()=> {
+    button.addEventListener('click', ()=> {
         movie.capacity - movie["tickets_sold"] += 1
         // console.log(movie.capacity - movie["tickets_sold"])
         // it's showing 1 less number but I cann't render it on the browser...!!
